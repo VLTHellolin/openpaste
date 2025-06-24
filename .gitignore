@@ -1,4 +1,5 @@
 logs
+build
 dist
 node_modules
 *.log
@@ -8,6 +9,7 @@ node_modules
 .eslintcache
 .npm
 .cache
+.output
 .env
 *.local
 .DS_Store

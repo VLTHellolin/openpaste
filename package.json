@@ -1,13 +1,15 @@
 {
   "name": "openpaste",
+  "type": "module",
   "version": "1.0.0",
+  "private": true,
   "packageManager": "pnpm@10.12.2",
   "description": "Yet another open-source pastebin.",
   "author": "hellolin <i@hellolin.top>",
   "license": "MIT",
   "scripts": {
     "build": "remix vite:build",
-    "deploy": "pnpm run ts-run tasks/validateConfig.ts && prisma generate && prisma db push && npm run build",
+    "deploy": "pnpm run ts-run tasks/validateConfig.ts && prisma generate && prisma db push && pnpm run build",
     "dev": "remix vite:dev",
     "lint": "eslint --cache --fix .",
     "prepare": "husky",
