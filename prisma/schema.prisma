@@ -1,0 +1,82 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+enum Visibility {
+  Public
+  Unlisted
+  Private
+}
+
+model User {
+  // Basic Info
+  id           Int      @id @default(autoincrement())
+  name         String
+  email        String   @unique
+  registeredAt DateTime @default(now())
+
+  pastes Paste[]
+
+  stars         Star[]
+  starredPastes Paste[] @relation("StarredPastes")
+  starCount     Int     @default(0)
+}
+
+model Paste {
+  id          String     @id @default(cuid(2))
+  authorId    Int
+  author      User       @relation(fields: [authorId], references: [id])
+  title       String
+  description String
+  visibility  Visibility
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+
+  revisions     PasteRevision[]
+  revisionCount Int             @default(0)
+
+  stars     Star[]
+  starredBy User[] @relation("StarredPastes")
+  starCount Int    @default(0)
+
+  @@index([authorId, updatedAt])
+}
+
+model PasteFile {
+  filename   String        @id
+  content    String        @db.Text
+  language   String?
+  revisionId String
+  revision   PasteRevision @relation(fields: [revisionId], references: [id], onDelete: Cascade)
+
+  @@index([revisionId, filename])
+}
+
+model PasteRevision {
+  id        String      @id @default(cuid(2))
+  pasteId   String
+  paste     Paste       @relation(fields: [pasteId], references: [id], onDelete: Cascade)
+  files     PasteFile[]
+  authorId  Int
+  createdAt DateTime    @default(now())
+
+  @@index([pasteId, createdAt])
+}
+
+model Star {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  pasteId   String
+  paste     Paste    @relation(fields: [pasteId], references: [id], onDelete: Cascade)
+  starredAt DateTime @default(now())
+
+  @@unique([userId, pasteId])
+  @@index([userId, starredAt])
+  @@index([pasteId, starredAt])
+}
