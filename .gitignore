@@ -1,0 +1,13 @@
+logs
+dist
+node_modules
+*.log
+*.tsbuildinfo
+.temp
+.turbo
+.eslintcache
+.npm
+.cache
+.env
+*.local
+.DS_Store

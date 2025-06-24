@@ -1,0 +1,43 @@
+{
+  "name": "openpaste",
+  "version": "1.0.0",
+  "packageManager": "pnpm@10.12.2",
+  "description": "Yet another open-source pastebin.",
+  "author": "hellolin <i@hellolin.top>",
+  "license": "MIT",
+  "scripts": {
+    "build": "remix vite:build",
+    "deploy": "pnpm run ts-run tasks/validateConfig.ts && prisma generate && prisma db push && npm run build",
+    "dev": "remix vite:dev",
+    "lint": "eslint --cache --fix .",
+    "prepare": "husky",
+    "start": "remix-serve ./build/server/index.js"
+  },
+  "dependencies": {
+    "@prisma/client": "catalog:backend",
+    "@remix-run/node": "catalog:backend",
+    "@remix-run/react": "catalog:backend",
+    "@remix-run/serve": "catalog:backend",
+    "isbot": "catalog:backend",
+    "react": "catalog:frontend",
+    "react-dom": "catalog:frontend",
+    "remix": "catalog:backend",
+    "zod": "catalog:backend"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "catalog:dev",
+    "@commitlint/config-conventional": "catalog:dev",
+    "@hellolin-eslint/react-config": "catalog:dev",
+    "@hellolin/eslint-config": "catalog:dev",
+    "@remix-run/dev": "catalog:build",
+    "@types/node": "catalog:types",
+    "@types/react": "catalog:types",
+    "@types/react-dom": "catalog:types",
+    "eslint": "catalog:dev",
+    "husky": "catalog:dev",
+    "lint-staged": "catalog:dev",
+    "prisma": "catalog:backend",
+    "typescript": "catalog:dev",
+    "vite": "catalog:build"
+  }
+}

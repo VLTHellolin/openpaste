@@ -1,0 +1,29 @@
+catalogs:
+  backend:
+    '@remix-run/node': ^2.16.8
+    '@remix-run/react': ^2.16.8
+    '@remix-run/serve': ^2.16.8
+    isbot: ^5.1.28
+    prisma: ^6.10.1
+    remix: ^2.16.8
+    zod: ^3.25.67
+    '@prisma/client': ^6.10.1
+  dev:
+    '@hellolin/eslint-config': ^1.0.0
+    eslint: ^9.29.0
+    '@commitlint/cli': ^19.8.1
+    '@commitlint/config-conventional': ^19.8.1
+    '@hellolin-eslint/react-config': ^1.0.0
+    husky: ^9.1.7
+    lint-staged: ^16.1.2
+    typescript: ^5.8.3
+  frontend:
+    react: ^19.1.0
+    react-dom: ^19.1.0
+  build:
+    vite: ^6.3.5
+    '@remix-run/dev': ^2.16.8
+  types:
+    '@types/node': ^24.0.3
+    '@types/react': ^19.1.8
+    '@types/react-dom': ^19.1.6
