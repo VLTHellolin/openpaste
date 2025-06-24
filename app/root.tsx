@@ -2,6 +2,7 @@
 
 import type React from 'react';
 import { Links, LiveReload, Meta, type MetaFunction, Outlet, Scripts, ScrollRestoration } from '@remix-run/react';
+import { Navigation } from './components/Navigation';
 import { Provider } from './components/ui/provider';
 
 export const meta: MetaFunction = () => {
@@ -29,6 +30,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
       </head>
       <body>
         <Provider>
+          <Navigation />
           {children}
         </Provider>
         <ScrollRestoration />
