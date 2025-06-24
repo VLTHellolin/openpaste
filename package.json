@@ -16,13 +16,17 @@
     "start": "remix-serve ./build/server/index.js"
   },
   "dependencies": {
+    "@chakra-ui/react": "catalog:frontend",
+    "@emotion/react": "catalog:frontend",
     "@prisma/client": "catalog:backend",
     "@remix-run/node": "catalog:backend",
-    "@remix-run/react": "catalog:backend",
+    "@remix-run/react": "catalog:frontend",
     "@remix-run/serve": "catalog:backend",
     "isbot": "catalog:backend",
+    "next-themes": "catalog:frontend",
     "react": "catalog:frontend",
     "react-dom": "catalog:frontend",
+    "react-icons": "catalog:frontend",
     "remix": "catalog:backend",
     "zod": "catalog:backend"
   },
@@ -40,6 +44,7 @@
     "lint-staged": "catalog:dev",
     "prisma": "catalog:backend",
     "typescript": "catalog:dev",
-    "vite": "catalog:build"
+    "vite": "catalog:build",
+    "vite-tsconfig-paths": "catalog:build"
   }
 }
