@@ -1,7 +1,7 @@
 /* eslint-disable react-refresh/only-export-components */
 
 import type React from 'react';
-import { Links, LiveReload, Meta, type MetaFunction, Outlet, Scripts, ScrollRestoration } from '@remix-run/react';
+import { Links, Meta, type MetaFunction, Outlet, Scripts, ScrollRestoration } from 'react-router';
 import { Navigation } from './components/Navigation';
 import { Provider } from './components/ui/provider';
 
@@ -35,7 +35,6 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
         </Provider>
         <ScrollRestoration />
         <Scripts />
-        <LiveReload />
       </body>
     </html>
   );

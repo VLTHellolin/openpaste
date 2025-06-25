@@ -1,6 +1,6 @@
 import { Button, chakra, Container, Drawer, Heading, HStack, Portal, Spacer } from '@chakra-ui/react';
-import { Link, NavLink } from '@remix-run/react';
 import { LuMenu } from 'react-icons/lu';
+import { Link, NavLink } from 'react-router';
 import { ColorModeButton } from './ui/color-mode';
 
 const NavigationBar = chakra('nav', {
