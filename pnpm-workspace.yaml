@@ -24,6 +24,11 @@ catalogs:
     '@emotion/react': ^11.14.0
     next-themes: ^0.4.6
     react-icons: ^5.5.0
+    monaco-editor: ^0.52.2
+    '@shikijs/monaco': ^3.7.0
+    shiki: ^3.7.0
+    monaco-editor-core: ^0.52.2
+    '@monaco-editor/react': ^4.7.0
   build:
     vite: ^6.3.5
     '@remix-run/dev': ^2.16.8
@@ -32,3 +37,4 @@ catalogs:
     '@types/node': ^24.0.3
     '@types/react': ^19.1.8
     '@types/react-dom': ^19.1.6
+    monaco-editor-core: ^0.52.2

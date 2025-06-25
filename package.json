@@ -18,16 +18,19 @@
   "dependencies": {
     "@chakra-ui/react": "catalog:frontend",
     "@emotion/react": "catalog:frontend",
+    "@monaco-editor/react": "catalog:frontend",
     "@prisma/client": "catalog:backend",
     "@remix-run/node": "catalog:backend",
     "@remix-run/react": "catalog:frontend",
     "@remix-run/serve": "catalog:backend",
+    "@shikijs/monaco": "catalog:frontend",
     "isbot": "catalog:backend",
     "next-themes": "catalog:frontend",
     "react": "catalog:frontend",
     "react-dom": "catalog:frontend",
     "react-icons": "catalog:frontend",
     "remix": "catalog:backend",
+    "shiki": "catalog:frontend",
     "zod": "catalog:backend"
   },
   "devDependencies": {
@@ -42,6 +45,7 @@
     "eslint": "catalog:dev",
     "husky": "catalog:dev",
     "lint-staged": "catalog:dev",
+    "monaco-editor-core": "catalog:types",
     "prisma": "catalog:backend",
     "typescript": "catalog:dev",
     "vite": "catalog:build",
