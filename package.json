@@ -1,0 +1,40 @@
+{
+  "name": "@openpaste/monorepo",
+  "type": "module",
+  "private": true,
+  "packageManager": "bun@1.3.1",
+  "workspaces": {
+    "packages": [
+      "app",
+      "packages/*"
+    ]
+  },
+  "scripts": {
+    "prepare": "husky",
+    "lint": "eslint . --cache",
+    "lint:fix": "eslint . --fix --cache",
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "db:push": "turbo -F @openpaste/db db:push",
+    "db:studio": "turbo -F @openpaste/db db:studio",
+    "db:generate": "turbo -F @openpaste/db db:generate",
+    "db:migrate": "turbo -F @openpaste/db db:migrate"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^20.1.0",
+    "@commitlint/config-conventional": "^20.0.0",
+    "@hellolin-eslint/config": "^3.0.1",
+    "@hellolin-eslint/node-config": "^3.0.1",
+    "@hellolin-eslint/react-config": "^3.0.1",
+    "@hellolin-eslint/unocss-config": "^3.0.1",
+    "@types/bun": "^1.3.1",
+    "@typescript/native-preview": "^7.0.0-dev.20251107.1",
+    "eslint": "^9.38.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.6",
+    "tsdown": "^0.16.0",
+    "turbo": "^2.6.0",
+    "typescript": "^5.9.3",
+    "unocss": "^66.5.5"
+  }
+}

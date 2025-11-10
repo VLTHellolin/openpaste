@@ -1,0 +1,22 @@
+{
+  "name": "@openpaste/auth",
+  "type": "module",
+  "private": true,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./*": {
+      "types": "./dist/*.d.ts",
+      "import": "./dist/*.js"
+    }
+  },
+  "scripts": {
+    "build": "tsdown"
+  },
+  "dependencies": {
+    "@openpaste/db": "workspace:*",
+    "better-auth": "^1.3.34"
+  }
+}
