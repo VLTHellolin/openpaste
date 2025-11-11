@@ -1,5 +1,6 @@
 import type { BetterAuthOptions } from 'better-auth';
 import { db } from '@openpaste/db';
+import { Redis } from '@openpaste/db/redis';
 import * as schema from '@openpaste/db/schema/auth';
 import { betterAuth } from 'better-auth';
 import { drizzleAdapter } from 'better-auth/adapters/drizzle';
@@ -18,11 +19,12 @@ const mailTitleDict = {
 export const auth = betterAuth({
   appName,
   baseURL: process.env.APP_URL || 'http://localhost:3000',
+  trustedOrigins: [process.env.CORS_ORIGIN || ''],
   database: drizzleAdapter(db, {
     provider: 'pg',
     schema,
   }),
-  trustedOrigins: [process.env.CORS_ORIGIN || ''],
+  secondaryStorage: new Redis(),
   emailAndPassword: {
     enabled: true,
     disableSignUp: process.env.DISABLE_SIGNUP === 'true',
@@ -74,6 +76,7 @@ export class AuthOpenAPI {
     for (const path of Object.keys(paths)) {
       const key = this.prefix + path;
       result[key] = paths[path]!;
+
       for (const method of Object.keys(paths[path]!)) {
         const operation = result[key][method as keyof typeof result[typeof key]];
         if (operation && !operation.tags) {
