@@ -6,7 +6,7 @@ node_modules
 .output
 .vercel
 .nitro
-.env.*
+.env*
 !.env.template
 *.log
 *.local

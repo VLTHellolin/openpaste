@@ -1,3 +1,4 @@
+import type { BetterAuthOptions } from 'better-auth';
 import { db } from '@openpaste/db';
 import * as schema from '@openpaste/db/schema/auth';
 import { betterAuth } from 'better-auth';
@@ -5,6 +6,7 @@ import { drizzleAdapter } from 'better-auth/adapters/drizzle';
 import { emailOTP, haveIBeenPwned, lastLoginMethod, openAPI } from 'better-auth/plugins';
 import { Mailer } from './mail';
 
+const appName = process.env.APP_NAME || 'OpenPaste';
 const mailer = new Mailer();
 
 const mailTitleDict = {
@@ -14,6 +16,8 @@ const mailTitleDict = {
 };
 
 export const auth = betterAuth({
+  appName,
+  baseURL: process.env.APP_URL || 'http://localhost:3000',
   database: drizzleAdapter(db, {
     provider: 'pg',
     schema,
@@ -30,7 +34,7 @@ export const auth = betterAuth({
       sendVerificationOTP: async ({ email, otp, type }) => {
         await mailer.send({
           to: email,
-          subject: `${mailTitleDict[type]} | OpenPaste`,
+          subject: `${mailTitleDict[type]} | ${appName}`,
           html: `<p>Your one-time password (OTP) is: <strong>${otp}</strong></p>`,
         });
       },
@@ -47,7 +51,10 @@ export const auth = betterAuth({
       httpOnly: true,
     },
   },
-});
+  telemetry: {
+    enabled: false,
+  },
+} satisfies BetterAuthOptions);
 
 export type AuthOpenAPISchema = ReturnType<typeof auth.api.generateOpenAPISchema>;
 export class AuthOpenAPI {
