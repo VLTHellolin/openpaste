@@ -17,6 +17,10 @@
   },
   "dependencies": {
     "@openpaste/db": "workspace:*",
-    "better-auth": "^1.3.34"
+    "better-auth": "^1.3.34",
+    "nodemailer": "^7.0.10"
+  },
+  "devDependencies": {
+    "@types/nodemailer": "^7.0.3"
   }
 }
