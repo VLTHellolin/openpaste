@@ -6,6 +6,7 @@ import { defineConfig } from 'vite';
 import tsConfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig({
+  envPrefix: ['VITE_', 'APP_'],
   server: {
     host: true,
     port: 3000,
@@ -21,9 +22,7 @@ export default defineConfig({
       },
     }),
     nitro({
-      config: {
-        preset: 'bun',
-      },
+      preset: 'bun',
     }) as any,
     unocss(),
     react(),

@@ -1,5 +1,5 @@
 {
-  "name": "@openpaste/auth",
+  "name": "@openpaste/logger",
   "type": "module",
   "private": true,
   "exports": {
@@ -17,13 +17,10 @@
     "build": "tsdown"
   },
   "dependencies": {
-    "@openpaste/db": "workspace:*",
-    "better-auth": "catalog:",
-    "nodemailer": "^7.0.10"
+    "consola": "^3.4.2"
   },
   "devDependencies": {
     "@types/bun": "catalog:",
-    "@types/nodemailer": "^7.0.3",
-    "tsdown": "^0.16.4"
+    "tsdown": "catalog:"
   }
 }

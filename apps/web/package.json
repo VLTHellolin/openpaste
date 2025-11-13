@@ -1,0 +1,30 @@
+{
+  "name": "@openpaste/web",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "start": "bun run -b ./.output/server/index.mjs"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.90.8",
+    "@tanstack/react-query-devtools": "^5.90.2",
+    "@tanstack/react-router": "^1.135.2",
+    "@tanstack/react-router-devtools": "^1.135.2",
+    "@tanstack/react-router-ssr-query": "^1.135.2",
+    "@tanstack/react-start": "^1.135.2",
+    "nitro": "^3.0.1-alpha.1",
+    "react": "catalog:",
+    "react-dom": "catalog:"
+  },
+  "devDependencies": {
+    "@iconify-json/lucide": "^1.2.73",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "@vitejs/plugin-react": "^5.1.1",
+    "unocss": "catalog:",
+    "vite": "catalog:",
+    "vite-tsconfig-paths": "^5.1.4"
+  }
+}

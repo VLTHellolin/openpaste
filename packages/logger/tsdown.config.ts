@@ -5,10 +5,6 @@ export default defineConfig({
   outDir: 'dist',
   format: 'esm',
   clean: true,
-  dts: {
-    tsgo: true,
-    sourcemap: true,
-  },
-  sourcemap: true,
+  dts: true,
   fixedExtension: false,
 });

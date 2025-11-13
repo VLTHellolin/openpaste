@@ -1,15 +1,14 @@
 {
-  "extends": "../tsconfig.base.json",
+  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "target": "ES2020",
-    "jsx": "react-jsx",
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "composite": true,
+    "target": "ESNext",
+    "lib": ["ESNext"],
     "module": "ESNext",
     "paths": {
       "*": ["./*"],
       "@/*": ["./src/*"]
-    },
-    "types": ["vite/client"]
+    }
   },
   "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["dist", "node_modules"]

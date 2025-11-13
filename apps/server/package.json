@@ -1,0 +1,25 @@
+{
+  "name": "@openpaste/server",
+  "type": "module",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "dev": "tsdown --watch ./src",
+    "build": "tsdown",
+    "start": "bun run -b ./dist/index.js"
+  },
+  "dependencies": {
+    "@elysiajs/cors": "^1.4.0",
+    "@elysiajs/openapi": "^1.4.11",
+    "@openpaste/db": "workspace:*",
+    "@openpaste/logger": "workspace:*",
+    "elysia": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@types/bun": "catalog:",
+    "tsdown": "catalog:"
+  }
+}

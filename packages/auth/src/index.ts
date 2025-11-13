@@ -16,9 +16,10 @@ const mailTitleDict = {
   'sign-in': 'Your Sign-In Code',
 };
 
-export const auth = betterAuth({
+const options = {
   appName,
   baseURL: process.env.APP_URL || 'http://localhost:3000',
+  basePath: '/auth',
   trustedOrigins: [process.env.CORS_ORIGIN || ''],
   database: drizzleAdapter(db, {
     provider: 'pg',
@@ -56,7 +57,9 @@ export const auth = betterAuth({
   telemetry: {
     enabled: false,
   },
-} satisfies BetterAuthOptions);
+} satisfies BetterAuthOptions;
+
+export const auth = betterAuth(options);
 
 export type AuthOpenAPISchema = ReturnType<typeof auth.api.generateOpenAPISchema>;
 export class AuthOpenAPI {
