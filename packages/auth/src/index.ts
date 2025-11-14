@@ -2,13 +2,12 @@ import type { BetterAuthOptions } from 'better-auth';
 import { db } from '@openpaste/db';
 import { Redis } from '@openpaste/db/redis';
 import * as schema from '@openpaste/db/schema/auth';
+import { sendEmail } from '@openpaste/email';
 import { betterAuth } from 'better-auth';
 import { drizzleAdapter } from 'better-auth/adapters/drizzle';
 import { emailOTP, haveIBeenPwned, lastLoginMethod, openAPI } from 'better-auth/plugins';
-import { Mailer } from './mail';
 
 const appName = process.env.APP_NAME || 'OpenPaste';
-const mailer = new Mailer();
 
 const mailTitleDict = {
   'email-verification': 'Verify Your Email Address',
@@ -29,16 +28,18 @@ const options = {
   emailAndPassword: {
     enabled: true,
     disableSignUp: process.env.DISABLE_SIGNUP === 'true',
+    requireEmailVerification: true,
   },
   plugins: [
     haveIBeenPwned(),
     emailOTP({
       sendVerificationOnSignUp: true,
+      overrideDefaultEmailVerification: true,
       sendVerificationOTP: async ({ email, otp, type }) => {
-        await mailer.send({
+        await sendEmail('otp', {
           to: email,
           subject: `${mailTitleDict[type]} | ${appName}`,
-          html: `<p>Your one-time password (OTP) is: <strong>${otp}</strong></p>`,
+          otp,
         });
       },
     }),

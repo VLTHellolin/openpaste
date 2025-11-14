@@ -1,0 +1,38 @@
+{
+  "name": "@openpaste/email",
+  "type": "module",
+  "private": true,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./*": {
+      "types": "./dist/*.d.ts",
+      "import": "./dist/*.js"
+    }
+  },
+  "scripts": {
+    "dev": "tsdown --watch ./src",
+    "dev:email": "email dev --dir src/templates --port 2999",
+    "build": "tsdown"
+  },
+  "dependencies": {
+    "@react-email/components": "^1.0.1",
+    "consola": "^3.4.2",
+    "nodemailer": "^7.0.10",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@openpaste/logger": "workspace:*",
+    "@react-email/preview-server": "5.0.4",
+    "@types/bun": "catalog:",
+    "@types/nodemailer": "^7.0.3",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "react-email": "^5.0.4",
+    "tsdown": "catalog:"
+  }
+}

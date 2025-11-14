@@ -1,6 +1,6 @@
-import { defineConfig, presetWind4 } from 'unocss';
+// For linters and editors
 
-// For editor & linting
+import { defineConfig, presetWind4 } from 'unocss';
 
 export default defineConfig({
   presets: [
@@ -10,14 +10,4 @@ export default defineConfig({
       },
     }),
   ],
-  content: {
-    pipeline: {
-      include: [
-        /\.([jt]sx?|mdx?|html|css)($|\?)/,
-      ],
-    },
-    filesystem: [
-      '**/*.{html,md,mdx,js,ts,jsx,tsx,css}',
-    ],
-  },
 });

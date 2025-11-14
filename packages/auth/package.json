@@ -18,12 +18,11 @@
   },
   "dependencies": {
     "@openpaste/db": "workspace:*",
-    "better-auth": "catalog:",
-    "nodemailer": "^7.0.10"
+    "@openpaste/email": "workspace:*",
+    "better-auth": "catalog:"
   },
   "devDependencies": {
     "@types/bun": "catalog:",
-    "@types/nodemailer": "^7.0.3",
     "tsdown": "^0.16.4"
   }
 }
