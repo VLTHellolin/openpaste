@@ -1,16 +1,9 @@
 {
-  "extends": "../../tsconfig.base.json",
+  "extends": "@openpaste/tsconfig/server.json",
   "compilerOptions": {
     "composite": true,
-    "target": "ESNext",
-    "lib": ["ESNext"],
-    "module": "ESNext",
-    "paths": {
-      "*": ["./*"],
-      "@/*": ["./src/*"]
-    },
     "types": ["bun"]
   },
   "include": ["**/*.ts", "**/*.tsx"],
-  "exclude": ["dist", "node_modules"]
+  "exclude": ["dist", ".output", "node_modules"]
 }

@@ -1,5 +1,5 @@
 {
-  "extends": "./tsconfig.base.json",
+  "extends": "@openpaste/tsconfig/base.json",
   "compilerOptions": {
     "target": "ESNext",
     "lib": ["ESNext"],

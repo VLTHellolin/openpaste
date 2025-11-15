@@ -1,0 +1,12 @@
+{
+  "name": "@openpaste/unocss",
+  "type": "module",
+  "private": true,
+  "exports": {
+    ".": "./uno.config.ts"
+  },
+  "dependencies": {
+    "@iconify-json/ph": "^1.2.2",
+    "unocss": "catalog:"
+  }
+}

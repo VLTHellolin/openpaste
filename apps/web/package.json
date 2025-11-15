@@ -19,7 +19,8 @@
     "react-dom": "catalog:"
   },
   "devDependencies": {
-    "@iconify-json/lucide": "^1.2.73",
+    "@openpaste/tsconfig": "workspace:*",
+    "@openpaste/unocss": "workspace:*",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
     "@vitejs/plugin-react": "^5.1.1",

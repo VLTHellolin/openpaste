@@ -27,6 +27,7 @@
   },
   "devDependencies": {
     "@openpaste/logger": "workspace:*",
+    "@openpaste/tsconfig": "workspace:*",
     "@react-email/preview-server": "5.0.4",
     "@types/bun": "catalog:",
     "@types/nodemailer": "^7.0.3",

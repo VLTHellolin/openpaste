@@ -19,6 +19,7 @@
     "zod": "catalog:"
   },
   "devDependencies": {
+    "@openpaste/tsconfig": "workspace:*",
     "@types/bun": "catalog:",
     "tsdown": "catalog:"
   }

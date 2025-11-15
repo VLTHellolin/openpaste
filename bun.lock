@@ -11,11 +11,12 @@
         "@hellolin-eslint/node-config": "^4.0.1",
         "@hellolin-eslint/react-config": "^4.0.1",
         "@hellolin-eslint/unocss-config": "^4.0.1",
+        "@openpaste/tsconfig": "workspace:*",
         "eslint": "^9.39.1",
         "husky": "^9.1.7",
         "lint-staged": "^16.2.6",
         "turbo": "^2.6.1",
-        "typescript": "^5.9.3",
+        "typescript": "catalog:",
         "unocss": "catalog:",
       },
     },
@@ -30,6 +31,7 @@
         "zod": "catalog:",
       },
       "devDependencies": {
+        "@openpaste/tsconfig": "workspace:*",
         "@types/bun": "catalog:",
         "tsdown": "catalog:",
       },
@@ -48,13 +50,24 @@
         "react-dom": "catalog:",
       },
       "devDependencies": {
-        "@iconify-json/lucide": "^1.2.73",
+        "@openpaste/tsconfig": "workspace:*",
+        "@openpaste/unocss": "workspace:*",
         "@types/react": "catalog:",
         "@types/react-dom": "catalog:",
         "@vitejs/plugin-react": "^5.1.1",
         "unocss": "catalog:",
         "vite": "catalog:",
         "vite-tsconfig-paths": "^5.1.4",
+      },
+    },
+    "configs/tsconfig": {
+      "name": "@openpaste/tsconfig",
+    },
+    "configs/unocss": {
+      "name": "@openpaste/unocss",
+      "dependencies": {
+        "@iconify-json/ph": "^1.2.2",
+        "unocss": "catalog:",
       },
     },
     "packages/auth": {
@@ -65,6 +78,7 @@
         "better-auth": "catalog:",
       },
       "devDependencies": {
+        "@openpaste/tsconfig": "workspace:*",
         "@types/bun": "catalog:",
         "tsdown": "^0.16.4",
       },
@@ -77,6 +91,7 @@
         "redis": "^5.9.0",
       },
       "devDependencies": {
+        "@openpaste/tsconfig": "workspace:*",
         "@types/bun": "catalog:",
         "@types/pg": "^8.15.6",
         "dotenv": "catalog:",
@@ -96,6 +111,7 @@
       },
       "devDependencies": {
         "@openpaste/logger": "workspace:*",
+        "@openpaste/tsconfig": "workspace:*",
         "@react-email/preview-server": "5.0.4",
         "@types/bun": "catalog:",
         "@types/nodemailer": "^7.0.3",
@@ -111,6 +127,7 @@
         "consola": "^3.4.2",
       },
       "devDependencies": {
+        "@openpaste/tsconfig": "workspace:*",
         "@types/bun": "catalog:",
         "tsdown": "catalog:",
       },
@@ -123,6 +140,7 @@
         "better-auth": "catalog:",
       },
       "devDependencies": {
+        "@openpaste/tsconfig": "workspace:*",
         "elysia": "catalog:",
         "tsdown": "catalog:",
       },
@@ -141,6 +159,7 @@
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "tsdown": "^0.16.4",
+    "typescript": "^5.9.3",
     "unocss": "^66.5.6",
     "vite": "^7.2.2",
     "zod": "^4.1.12",
@@ -446,7 +465,7 @@
 
     "@humanwhocodes/retry": ["@humanwhocodes/retry@0.4.3", "", {}, "sha512-bV0Tgo9K4hfPCek+aMAn81RppFKv2ySDQeMoSZuvTASywNTnVJCArCZE2FWqpvIatKu7VMRLWlR1EazvVhDyhQ=="],
 
-    "@iconify-json/lucide": ["@iconify-json/lucide@1.2.73", "", { "dependencies": { "@iconify/types": "*" } }, "sha512-++HFkqDNu4jqG5+vYT+OcVj9OiuPCw9wQuh8G5QWQnBRSJ9eKwSStiU8ORgOoK07xJsm/0VIHySMniXUUXP9Gw=="],
+    "@iconify-json/ph": ["@iconify-json/ph@1.2.2", "", { "dependencies": { "@iconify/types": "*" } }, "sha512-PgkEZNtqa8hBGjHXQa4pMwZa93hmfu8FUSjs/nv4oUU6yLsgv+gh9nu28Kqi8Fz9CCVu4hj1MZs9/60J57IzFw=="],
 
     "@iconify/types": ["@iconify/types@2.0.0", "", {}, "sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg=="],
 
@@ -571,6 +590,10 @@
     "@openpaste/sdk": ["@openpaste/sdk@workspace:packages/sdk"],
 
     "@openpaste/server": ["@openpaste/server@workspace:apps/server"],
+
+    "@openpaste/tsconfig": ["@openpaste/tsconfig@workspace:configs/tsconfig"],
+
+    "@openpaste/unocss": ["@openpaste/unocss@workspace:configs/unocss"],
 
     "@openpaste/web": ["@openpaste/web@workspace:apps/web"],
 

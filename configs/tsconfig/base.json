@@ -1,5 +1,9 @@
 {
+  "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
+    "target": "ESNext",
+    "lib": ["ESNext"],
+    "module": "ESNext",
     "incremental": true,
     "moduleResolution": "bundler",
     "resolveJsonModule": true,

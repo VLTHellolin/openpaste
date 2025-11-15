@@ -1,0 +1,10 @@
+{
+  "name": "@openpaste/tsconfig",
+  "type": "module",
+  "private": true,
+  "files": [
+    "base.json",
+    "server.json",
+    "web.json"
+  ]
+}
